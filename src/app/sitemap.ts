@@ -3,7 +3,8 @@ import { getArticles } from "./blog/[subject]/use-get-article";
 import { clientServices } from "./servicos/lib/data";
 
 const baseUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://example.com";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
+  "https://coimcamp.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
