@@ -36,9 +36,17 @@ npm install
 
 ```bash
 NEXT_PUBLIC_SITE_URL=https://seu-dominio.com
+# E-mail (Resend)
+RESEND_API_KEY=...
+# Supabase (uploads de imagens)
+NEXT_PUBLIC_SUPABASE_URL=...
+SUPABASE_SERVICE_ROLE_KEY=...
 ```
 
-O `NEXT_PUBLIC_SITE_URL` é usado no sitemap para gerar URLs absolutas (fallback: `https://example.com`).
+Observações:
+- `NEXT_PUBLIC_SITE_URL` é usado no sitemap para gerar URLs absolutas (fallback: `https://example.com`).
+- `RESEND_API_KEY` envia os e-mails dos formulários (agendar visita e orçamento) para `atendimento@coimcamp.com`.
+- `SUPABASE_SERVICE_ROLE_KEY` é usada no backend para salvar imagens no bucket/pasta `cliente/{nome-cliente}` e gerar a URL pública.
 
 ## Scripts
 

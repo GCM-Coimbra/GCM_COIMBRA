@@ -127,19 +127,56 @@ export function OrcamentoForm() {
     return () => controller.abort();
   }, [form, zipCodeValue]);
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    setIsLoading(true);
-    setTimeout(() => {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      setIsLoading(true);
+
+      const formData = new FormData();
+      formData.append("name", values.name);
+      formData.append("phone", values.phone.toString());
+      formData.append("service", values.service);
+      formData.append("street", values.street);
+      formData.append("number", values.number);
+      if (values.complement) formData.append("complement", values.complement);
+      formData.append("neighborhood", values.neighborhood);
+      formData.append("city", values.city);
+      formData.append("state", values.state);
+      formData.append("zipCode", values.zipCode);
+      formData.append("dateAndTime", values.dateAndTime.toISOString());
+      formData.append("message", values.message);
+      formData.append("urgency", values.urgency);
+
+      values.images?.forEach((file) => {
+        formData.append("images", file);
+      });
+
+      const response = await fetch("/api/forms/orcamento", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result?.error ?? "Não foi possível enviar o pedido.");
+      }
+
       toast.custom((t) => (
         <Toaster
-          message="Orcamento solicitado com sucesso, em até 2 horas entraremos em contato."
+          message="Orçamento solicitado com sucesso, em até 2 horas entraremos em contato."
           onClick={() => toast.dismiss(t)}
         />
       ));
-      setIsLoading(false);
       form.reset();
-    }, 1000);
+    } catch (error) {
+      const message =
+        error instanceof Error
+          ? error.message
+          : "Erro ao enviar sua solicitação.";
+      toast.error(message);
+    } finally {
+      setIsLoading(false);
+    }
   }
   return (
     <Form {...form}>
@@ -473,11 +510,11 @@ export function OrcamentoForm() {
                   Urgência <span className="text-destructive">*</span>
                 </FormLabel>
                 <FormControl>
-                  <Select>
-                    <SelectTrigger
-                      defaultValue={field.value ?? "normal"}
-                      id={field.name}
-                    >
+                  <Select
+                    onValueChange={field.onChange}
+                    value={field.value || "normal"}
+                  >
+                    <SelectTrigger id={field.name}>
                       <SelectValue placeholder="Selecione a urgência" />
                     </SelectTrigger>
                     <SelectContent>
@@ -497,11 +534,7 @@ export function OrcamentoForm() {
           className="w-full rounded-3xl py-7 font-semibold uppercase"
           disabled={isLoading}
         >
-          {isLoading ? (
-            <Spinner />
-          ) : (
-            "Solicitar orçamento"
-          )}
+          {isLoading ? <Spinner /> : "Solicitar orçamento"}
         </Button>
       </form>
     </Form>
