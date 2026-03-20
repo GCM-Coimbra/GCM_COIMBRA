@@ -53,7 +53,7 @@ export default function OrcamentoPage() {
                 <RiMailFill className="text-foreground" />
               </div>
               <p className="font-medium text-sidebar-foreground text-sm">
-                Email: contato@coimbraprotec.com.br
+                Email: atendimento@coimcamp.com
               </p>
             </div>
           </div>
