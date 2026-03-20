@@ -17,7 +17,7 @@ const SERVICE_LABEL: Record<ServiceCode, string> = {
 const resendApiKey = process.env.RESEND_API_KEY;
 const resendClient = resendApiKey ? new Resend(resendApiKey) : null;
 const supabase = getSupabaseServerClient();
-const BUCKET = "cliente";
+const BUCKET = "agendamentos";
 
 function normalizeFolderName(value: string) {
   return (
@@ -37,7 +37,7 @@ async function uploadImages(clientName: string, files: File[]) {
   const publicUrls: string[] = [];
 
   for (const file of files) {
-    const key = `cliente/${folder}/${randomUUID()}-${file.name}`;
+    const key = `agendamentos/cliente/${folder}/${randomUUID()}-${file.name}`;
     const { error } = await supabase.storage.from(BUCKET).upload(key, file, {
       cacheControl: "3600",
       contentType: file.type || "application/octet-stream",
@@ -154,8 +154,8 @@ Imagens: ${imageUrls.length > 0 ? imageUrls.join(", ") : "não anexadas"}
 `.trim();
 
     const resendResponse = await resendClient.emails.send({
-      from: "COIMBRA PROTEC <onboarding@resend.dev>",
-      to: ["atendimento@coimcamp.com"],
+      from: "COIMCAMP <onboarding@resend.dev>",
+      to: ["gustavo.coimbracoimbra@gmail.com"],
       subject: `Agendar visita - ${serviceLabel} (${payload.city})`,
       html,
       text,
