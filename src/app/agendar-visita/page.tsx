@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AgendarVisitaForm } from "./components/agendar-visita-form";
 
 export const metadata: Metadata = {
-  title: "Agendar visita técnica | COIMBRA PROTEC",
+  title: "Agendar visita técnica | COIMCAMP",
   description:
     "Agende uma visita técnica para avaliação de portões automáticos, cercas elétricas, alarmes e CFTV em Campinas, Valinhos e Vinhedo. Equipe pronta para atender.",
   alternates: {

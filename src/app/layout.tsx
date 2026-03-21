@@ -6,7 +6,7 @@ import { NavigationMenu } from "@/components/navigation-menu/navigation-menu";
 import { Footer } from "./(sections)/footer/footer";
 
 export const metadata: Metadata = {
-  title: "COIMBRA PROTEC",
+  title: "COIMCAMP",
   description:
     "Serviços de segurança, manutenção e alarmes em Campinas, valinhos, vinhedo e região.",
 };

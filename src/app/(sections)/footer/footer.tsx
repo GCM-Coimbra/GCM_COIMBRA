@@ -9,7 +9,7 @@ export function Footer() {
           <Link href="/">
             <Image
               src="/images/setting.png"
-              alt="Coimbra Protec"
+              alt="COIMCAMP"
               width={250}
               height={250}
               className="h-full w-full object-cover object-center"
@@ -25,7 +25,7 @@ export function Footer() {
           </p>
         </Link>
         <p className="font-bold font-secondary text-border text-xs lg:text-nowrap lg:text-base">
-          © {new Date().getFullYear()} Coimbra Protec. Todos os direitos
+          © {new Date().getFullYear()} COIMCAMP. Todos os direitos
           reservados.
         </p>
       </div>

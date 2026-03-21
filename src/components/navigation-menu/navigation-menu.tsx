@@ -97,7 +97,7 @@ export function NavigationMenu() {
                   isOpen && "text-background",
                 )}
               >
-                COIMBRA PROTEC
+                COIMCAMP
               </h2>
             </div>
           </Link>

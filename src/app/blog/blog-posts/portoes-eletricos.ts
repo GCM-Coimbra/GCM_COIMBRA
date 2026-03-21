@@ -391,7 +391,7 @@ const portoesEletricosArticle = {
     {
       _type: "block",
       style: "normal",
-      children: [{ _type: "span", text: "— COIMBRA PROTEC" }],
+      children: [{ _type: "span", text: "— COIMCAMP" }],
       markDefs: [],
     },
   ],

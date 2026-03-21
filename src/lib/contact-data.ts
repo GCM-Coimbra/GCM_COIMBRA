@@ -1,7 +1,7 @@
 import { RiMailFill, RiWhatsappFill } from "@remixicon/react";
 
 export const whatsappNumber = "5519992752708";
-export const email = "contato@coimbraprotec.com.br";
+export const email = "atendimento@coimcamp.com";
 
 export const navigationContacts = [
   {
