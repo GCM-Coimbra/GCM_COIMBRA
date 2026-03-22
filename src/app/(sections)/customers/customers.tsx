@@ -5,9 +5,11 @@ import { faker } from "@faker-js/faker";
 import { RiStarFill } from "@remixicon/react";
 import { motion, useInView } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { fadeInUpVariants, fadeInVariants } from "../anime";
 import { CustomerReviewCard } from "./components/customer-review-card";
@@ -111,6 +113,17 @@ export function Customers() {
             index={index}
           />
         ))}
+      </div>
+      <div className="mt-6 w-fit self-center">
+        <div className="flex flex-col items-center gap-4">
+          <h1 className="font-bold text-2xl">Adicione sua avaliação</h1>
+          <Link href="https://g.page/r/CY3TcCjNyf3MEAI/review" target="blank">
+            <Button>
+              <RiStarFill className="size-4" />
+              <p className="font-semibold text-sm uppercase">Avaliar</p>
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

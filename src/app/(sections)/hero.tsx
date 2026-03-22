@@ -5,13 +5,13 @@ import { faker } from "@faker-js/faker";
 import { AvatarImage } from "@radix-ui/react-avatar";
 import { RiAwardFill, RiPhoneFill, RiStarFill } from "@remixicon/react";
 import { motion, useInView } from "motion/react";
+import Link from "next/link";
 import { useRef } from "react";
 import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { fadeInVariants, fadeRightVariants } from "./anime";
-import Link from "next/link";
 
 export function Hero() {
   const headerRef = useRef<HTMLHeadingElement | null>(null);

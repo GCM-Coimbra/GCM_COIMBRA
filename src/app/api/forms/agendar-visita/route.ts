@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import type { SupabaseClient } from "@supabase/supabase-js";
 import { getSupabaseServerClient } from "@/lib/supabase-server";
 
 type ServiceCode = "1" | "2" | "3" | "4" | "5" | "6" | string;
@@ -16,7 +17,6 @@ const SERVICE_LABEL: Record<ServiceCode, string> = {
 
 const resendApiKey = process.env.RESEND_API_KEY;
 const resendClient = resendApiKey ? new Resend(resendApiKey) : null;
-const supabase = getSupabaseServerClient();
 const BUCKET = "agendamentos";
 
 function normalizeFolderName(value: string) {
@@ -30,17 +30,39 @@ function normalizeFolderName(value: string) {
   );
 }
 
-async function uploadImages(clientName: string, files: File[]) {
-  if (!supabase || files.length === 0) return [];
+function safeObjectBaseName(blob: Blob, index: number): string {
+  const raw =
+    blob instanceof File && blob.name
+      ? blob.name
+      : `imagem-${index + 1}.bin`;
+  const dot = raw.lastIndexOf(".");
+  const stem = (dot > 0 ? raw.slice(0, dot) : raw)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-zA-Z0-9._-]+/g, "-")
+    .replace(/(^-|-$)/g, "")
+    .slice(0, 80);
+  const ext = dot > 0 ? raw.slice(dot).toLowerCase().replace(/[^a-z0-9.]/g, "") : "";
+  const safeStem = stem || "imagem";
+  return `${randomUUID()}-${safeStem}${ext || ""}`;
+}
+
+async function uploadImages(
+  supabase: SupabaseClient,
+  clientName: string,
+  imageBlobs: Blob[],
+) {
+  if (imageBlobs.length === 0) return [];
 
   const folder = normalizeFolderName(clientName);
   const publicUrls: string[] = [];
 
-  for (const file of files) {
-    const key = `agendamentos/cliente/${folder}/${randomUUID()}-${file.name}`;
-    const { error } = await supabase.storage.from(BUCKET).upload(key, file, {
+  for (const [i, blob] of imageBlobs.entries()) {
+    const key = `cliente/${folder}/${safeObjectBaseName(blob, i)}`;
+    const body = Buffer.from(await blob.arrayBuffer());
+    const { error } = await supabase.storage.from(BUCKET).upload(key, body, {
       cacheControl: "3600",
-      contentType: file.type || "application/octet-stream",
+      contentType: blob.type || "application/octet-stream",
       upsert: false,
     });
 
@@ -104,11 +126,28 @@ export async function POST(request: Request) {
       message: String(formData.get("message") ?? "").trim(),
     };
 
-    const files = formData
-      .getAll("images")
-      .filter((file): file is File => file instanceof File);
+    const imageBlobs: Blob[] = [];
+    for (const part of formData.getAll("images")) {
+      if (part instanceof Blob && part.size > 0) {
+        imageBlobs.push(part);
+      }
+    }
 
-    const imageUrls = await uploadImages(payload.name, files);
+    const supabase = getSupabaseServerClient();
+    if (imageBlobs.length > 0 && !supabase) {
+      return NextResponse.json(
+        {
+          error:
+            "Não foi possível enviar as imagens: defina NEXT_PUBLIC_SUPABASE_URL e SUPABASE_SERVICE_ROLE_KEY no ambiente do servidor.",
+        },
+        { status: 503 },
+      );
+    }
+
+    const imageUrls =
+      imageBlobs.length === 0 || !supabase
+        ? []
+        : await uploadImages(supabase, payload.name, imageBlobs);
 
     const serviceLabel = SERVICE_LABEL[payload.service] ?? payload.service;
 
@@ -154,8 +193,8 @@ Imagens: ${imageUrls.length > 0 ? imageUrls.join(", ") : "não anexadas"}
 `.trim();
 
     const resendResponse = await resendClient.emails.send({
-      from: "COIMCAMP <onboarding@resend.dev>",
-      to: ["gustavo.coimbracoimbra@gmail.com"],
+      from: "COIMCAMP <atendimento@contato.coimcamp.com>",
+      to: ["halbuquerque2850@gmail.com"],
       subject: `Agendar visita - ${serviceLabel} (${payload.city})`,
       html,
       text,
