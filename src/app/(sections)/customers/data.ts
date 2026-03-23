@@ -17,7 +17,7 @@ export const testimonials = [
   {
     id: 4,
     description:
-      "Instalaram a cerca elétrica e o suporte pós-instalação foi ótimo — tiraram dúvidas e fizeram ajustes sem custo. Me senti seguro com o serviço.",
+      "Instalaram a cerca elétrica e o suporte pós-instalação foi ótimo — tiraram dúvidas e fizeram ajustes sem custo. Me senti segura com o serviço.",
   },
   {
     id: 5,

@@ -1,7 +1,6 @@
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: <because> */
 "use client";
 
-import { faker } from "@faker-js/faker";
 import { AvatarImage } from "@radix-ui/react-avatar";
 import { RiAwardFill, RiPhoneFill, RiStarFill } from "@remixicon/react";
 import { motion, useInView } from "motion/react";
@@ -12,6 +11,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { fadeInVariants, fadeRightVariants } from "./anime";
+
+function pexelsPortrait(photoId: number) {
+  return `https://images.pexels.com/photos/${photoId}/pexels-photo-${photoId}.jpeg?auto=compress&cs=tinysrgb&w=480&h=480&fit=crop`;
+}
+
+const photoIds = [2379004, 774909, 3785079, 415829, 1222271];
 
 export function Hero() {
   const headerRef = useRef<HTMLHeadingElement | null>(null);
@@ -84,7 +89,7 @@ export function Hero() {
                           index !== 0 && "-ms-3",
                         )}
                       >
-                        <AvatarImage src={faker.image.personPortrait()} />
+                        <AvatarImage src={pexelsPortrait(photoIds[index])} />
                       </Avatar>
                     </motion.div>
                   ))}

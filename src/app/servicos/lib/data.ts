@@ -1,4 +1,7 @@
-import { faker } from "@faker-js/faker";
+/** Retratos do CDN Pexels (gratuitos para uso conforme https://www.pexels.com/license/). */
+function pexelsPortrait(photoId: number) {
+  return `https://images.pexels.com/photos/${photoId}/pexels-photo-${photoId}.jpeg?auto=compress&cs=tinysrgb&w=480&h=480&fit=crop`;
+}
 
 export const clientServices = [
   {
@@ -6,146 +9,146 @@ export const clientServices = [
     title: "Automatização de portão deslizante",
     description:
       "Nosso cliente tinha problemas em entrar em sua residência em horários de pico por conta da necessidade de sair de seu veículo para poder abrir o portão e estacionar seu carro, realizamos a automatização de seu portão para um portão deslizante solucionando o seu problema.",
-    serviceImage: "/images/portoes-eletricos.webp",
+    serviceImage: "/images/service-1.webp",
     clientName: "João da Silva",
-    clientImage: faker.image.personPortrait(),
-    price: faker.number.int({ min: 1000, max: 10000 }),
+    clientImage: pexelsPortrait(2379004),
+    price: 3500,
     href: "/servicos/automatizacao-de-portao-deslizante-joao-da-silva",
-    videoUrl:
-      "https://d3v6dicq4pzaym.cloudfront.net/vi_vs_capangas_legendado.mp4",
-    videoThumbnail: "/images/portoes-eletricos.webp",
+    videoUrl: "/videos/servico-1.mp4",
+    videoThumbnail: "/images/service-1.webp",
     useCase: {
-      title: "Automatização de portão deslizante - caso João Silva",
+      title: "Automatização de portão pivotante - caso João da Silva",
       contact: {
         paragraphs: [
-          "Nós recebemos o contato do João por meio do formulário do site: ele relatou a frustração diária de ter que sair do carro para abrir o portão em horários de pico — problema que atrapalhava a rotina da família e aumentava o risco de perda de tempo e segurança. Agendamos uma visita técnica no mesmo dia útil para entender a situação in loco e trazer uma solução prática.",
+          "Recebemos o contato do João por meio do formulário do site, onde ele relatou a necessidade de substituir o sistema de abertura manual do portão da residência por uma solução mais prática e segura. Como o acesso principal era utilizado diversas vezes ao dia, principalmente por veículos da família, a falta de automatização estava gerando desconforto na rotina e diminuindo a sensação de segurança no acesso ao imóvel. Agendamos uma visita técnica para avaliar o local, entender a estrutura existente e indicar a melhor solução para o tipo de portão.",
         ],
       },
       problem: {
         paragraphs: [
-          "Na vistoria inicial nossa equipe fez uma inspeção completa: medimos o vão e o peso do portão, verificamos o estado das roldanas e trilhos, analisamos o batente e as folgas, testamos o acabamento elétrico existente e checamos a alimentação no quadro. Identificamos que o conjunto mecânico estava em boas condições, mas o portão era pesado o suficiente para exigir um motor com torque adequado e controles com proteção contra sobrecarga — além disso, não havia fotocélulas nem sistemas de segurança instalados, o que aumentava o risco para crianças e veículos.",
+          "Na vistoria inicial, nossa equipe analisou a estrutura do portão pivotante, verificando peso, medidas das folhas, estado das dobradiças, alinhamento dos pilares, espaço de abertura e condições da instalação elétrica disponível. Identificamos que o portão tinha boa estrutura, mas exigia um automatizador compatível com abertura pivotante de duas folhas, além de um sistema de controle que garantisse funcionamento suave, sem esforço excessivo nos braços do motor. Também observamos a ausência de itens de segurança, como fotocélulas e sistema de parada automática, o que poderia representar risco durante o uso diário.",
         ],
       },
       service: {
         paragraphs: [
-          "Com esses dados, elaboramos um plano de trabalho claro e transparente. Propusemos a automatização com motor especificado para a massa e frequência de uso do portão, instalação de painel de comando com proteção contra surtos, limitadores de curso, fotocélulas e dois controles remotos multiusuário. Enviamos orçamento detalhado com prazos (visita técnica + 1 dia de instalação + testes) e orientações sobre manutenção preventiva. O João aprovou e marcamos a execução.",
-          "No dia da obra nossa equipe executou a remoção parcial do mecanismo antigo (quando necessário), fixou o suporte do motor, alinhou trilhos e roldanas, instalou o motor de acionamento e o painel de comando em caixa estanque, e fez toda a fiação com aterramento e proteção. Em seguida programamos limites de abertura/fechamento, configuramos a desaceleração para um movimento suave, e instalamos fotocélulas e contato de segurança. Realizamos testes em diferentes condições (com carro parado, com pessoa próxima, ciclos repetidos) até garantir estabilidade e segurança. Finalizamos com vedação e proteção contra intempéries nos pontos elétricos.",
+          "Com base no diagnóstico, apresentamos ao João uma proposta completa de automatização para portão pivotante, com motores adequados ao peso e ao ângulo de abertura das folhas, central de comando, suportes de fixação reforçados, sensores de segurança e controles remotos. Após a aprovação, iniciamos a instalação com o posicionamento preciso dos braços automatizadores, ajuste dos pontos de fixação e regularização do curso de abertura e fechamento para evitar trancos ou desalinhamentos. Em seguida, realizamos toda a parte elétrica, com proteção da fiação, configuração da central e programação dos comandos de acionamento.",
+          "Durante a execução, também ajustamos a força de abertura, o tempo de resposta e a desaceleração final das folhas, para garantir um movimento estável, silencioso e seguro. Por fim, instalamos e testamos os dispositivos de segurança, simulando situações de uso real para confirmar o correto funcionamento do sistema em diferentes cenários.",
         ],
       },
       conclusion: {
         paragraphs: [
-          "A entrega incluiu a orientação prática ao João: como usar os controles, trocar baterias, acionar o modo manual em emergências e os cuidados simples de manutenção. Também deixamos um relatório com o que foi instalado, garantias e recomendações para revisões periódicas. O resultado foi imediato — João voltou a entrar sem sair do carro, ganhou mais segurança e tempo no dia a dia, e relatou grande tranquilidade ao chegar à noite. Para nós, foi mais um projeto cumprido com sucesso — solução técnica alinhada à experiência do usuário.",
+          "Ao final do serviço, fizemos a entrega técnica ao João com todas as orientações de uso, cuidados básicos de manutenção e recomendações para preservar a vida útil do automatizador. Explicamos como operar os controles, como utilizar o sistema manual em caso de falta de energia e quais sinais observar para solicitar uma revisão preventiva. O resultado foi um acesso mais prático, moderno e seguro, trazendo mais conforto para a rotina da família. Para a equipe, foi mais um projeto concluído com sucesso, unindo precisão técnica, segurança e uma experiência muito mais conveniente para o cliente.",
         ],
       },
     },
   },
   {
     id: 2,
-    title: "Reparo de motor de portão",
+    title: "Automatização e reparo de portão pivotante",
     description:
-      "O cliente notou que, ao chegar em casa à noite, o portão emperrava e o motor fazia um ruído alto antes de parar — em dias de chuva o problema piorava. Após inspeção, identificamos escova desgastada e acoplamento desalinhado. Substituímos as peças, reajustamos o alinhamento, testamos dezenas de aberturas/fechamentos e deixamos o portão silencioso e confiável novamente. Agora o cliente entra com segurança e sem se preocupar com falhas.",
+      "A Mariana nos procurou pelo WhatsApp: o portão pivotante de uma folha falhava com frequência — às vezes demorava a responder, outras parava no meio do curso — e à noite isso gerava insegurança. Na vistoria encontramos desgaste no automatizador, braço articulador desalinhado e falta de lubrificação. Fizemos revisão, troca do que estava comprometido, realinhamento, recalibração da central e testes até o movimento ficar contínuo e silencioso.",
     serviceImage: "/images/service-2.webp",
     clientName: "Mariana Costa",
-    clientImage: faker.image.personPortrait(),
-    price: faker.number.int({ min: 300, max: 3500 }),
-    href: "/servicos/reparo-de-motor-mariana-costa",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    clientImage: pexelsPortrait(774909),
+    price: 2150,
+    href: "/servicos/reparo-portao-pivotante-uma-folha-mariana-costa",
+    videoUrl: "/videos/servico-2.mp4",
     videoThumbnail: "/images/service-2.webp",
     useCase: {
-      title: "Reparo de motor de portão - caso Mariana Costa",
+      title:
+        "Automatização e reparo de portão pivotante de uma folha — caso Mariana",
       contact: {
         paragraphs: [
-          "Recebemos a solicitação da Mariana via WhatsApp: ela relatou que, nas últimas semanas, o motor do portão começava a chiar e, em alguns dias, travava durante a abertura, obrigando-a a sair do carro para forçar a movimentação. Como a família costuma chegar tarde, a insegurança e o incômodo eram constantes. Agendamos uma visita técnica para o dia seguinte, priorizando uma janela horária que não atrapalhasse sua rotina.",
+          "Recebemos o contato da Mariana via WhatsApp, onde ela relatou que o portão pivotante de uma folha da residência vinha apresentando falhas frequentes no funcionamento. Em alguns momentos, o portão demorava para responder ao comando e, em outros, parava no meio do percurso, exigindo acionamento manual. Como ela utilizava o acesso principalmente à noite, a situação gerava insegurança e desconforto no dia a dia. Diante disso, organizamos uma visita técnica já para o dia seguinte, buscando agilizar a identificação do problema e propor uma solução eficaz.",
         ],
       },
       problem: {
         paragraphs: [
-          "Na vistoria identificamos sinais claros de desgaste no motor: escovas com consumo avançado, acoplamento levemente desalinhado e folga nos rolamentos. Também observamos presença de poeira e umidade que haviam comprometido a isolação em alguns pontos, além de lubrificação antiga e endurecida. Esses fatores juntos causavam ruído, aquecimento e perda de torque em alguns ciclos, explicando as falhas intermitentes relatadas pela cliente.",
+          "Durante a vistoria, nossa equipe realizou uma análise completa do sistema de automatização e da estrutura do portão. Identificamos que o automatizador apresentava desgaste interno, com perda de eficiência no conjunto mecânico responsável pela movimentação da folha. Também observamos desalinhamento no ponto de fixação do braço articulador, o que gerava esforço irregular durante a abertura e fechamento. Além disso, havia sinais de falta de lubrificação adequada nas articulações e pequenos pontos de oxidação, fatores que contribuíam para o funcionamento irregular e ruídos excessivos ao longo do uso.",
         ],
       },
       service: {
         paragraphs: [
-          "Com o diagnóstico em mãos apresentamos à Mariana um plano objetivo: substituição das escovas, troca do acoplamento e rolamentos danificados, limpeza interna completa, aplicação de lubrificante recomendado e verificação do circuito de comando. Discutimos opções (reparo com peças originais ou substituição por kit recondicionado) e oferecemos o orçamento detalhado com tempo de execução estimado. Assim que aprovado, programamos a intervenção para o dia seguinte.",
-          "Durante a execução desmontamos o casco do motor, removemos os componentes comprometidos e procedemos com a limpeza e secagem das partes elétricas. Instalamos escovas novas, rolamentos e acoplamento de precisão, reaplicamos lubrificante adequado nas partes móveis e revisamos a fiação e conectores. Recolocamos o motor, ajustamos o torque e calibramos o painel de comando. Finalizamos com testes de ciclo completos (abertura/fechamento repetidos, simulação com veículo parado na entrada e verificação de temperaturas), garantindo estabilidade e silêncio operacional.",
+          "Com base no diagnóstico, apresentamos à Mariana um plano de intervenção focado na recuperação completa do sistema. Propusemos a revisão do automatizador, substituição dos componentes desgastados, realinhamento do braço mecânico e reforço nos pontos de fixação. Após a aprovação, iniciamos o serviço com a desmontagem parcial do conjunto automatizador e a limpeza dos componentes internos e externos.",
+          "Na sequência, realizamos a troca das peças comprometidas, ajustamos o posicionamento do braço articulado para garantir um curso mais uniforme e aplicamos lubrificação adequada em todos os pontos de movimento. Também revisamos a central de comando, recalibramos os parâmetros de abertura e fechamento e ajustamos a força do motor para um desempenho mais equilibrado. Finalizamos com testes completos de funcionamento, simulando diferentes condições de uso para garantir estabilidade, segurança e fluidez no movimento do portão.",
         ],
       },
       conclusion: {
         paragraphs: [
-          "Entregamos o sistema plenamente funcional: o portão voltou a operar sem ruídos excessivos, com arrancada e parada suaves e sem perda de força. Explicamos à Mariana as intervenções realizadas, entregamos a nota técnica das peças trocadas, oferecemos garantia sobre o serviço e orientações de manutenção preventiva (pontos de lubrificação e periodicidade de revisão). A cliente relatou alívio por não precisar mais sair do carro para forçar o portão e destacou a confiança em poder contar conosco para futuras manutenções. Para a nossa equipe, foi um reparo que reforçou a importância de diagnóstico rápido e solução com peças e procedimentos adequados.",
+          "Após a conclusão do serviço, o portão voltou a operar de forma contínua, silenciosa e sem interrupções, atendendo plenamente às necessidades da cliente. Orientamos a Mariana sobre os cuidados básicos de manutenção, periodicidade de revisões e uso correto do sistema em situações do dia a dia. Também fornecemos garantia sobre as peças substituídas e o serviço realizado. A cliente destacou a melhora imediata no funcionamento e a tranquilidade de voltar a utilizar o portão com segurança, especialmente no período noturno. Para nossa equipe, foi mais um atendimento concluído com eficiência, reforçando a importância de ajustes precisos em sistemas pivotantes de uma folha.",
         ],
       },
     },
   },
   {
     id: 3,
-    title: "Instalação de controle remoto",
+    title: "Automatização de portão basculante",
     description:
-      "O cliente vivia tendo que sair do carro para abrir o portão porque os controles antigos estavam perdidos ou sem bateria. Instalamos um sistema de controle remoto multiusuário, programamos chaves reservas e deixamos a interface intuitiva. Em poucos minutos ele voltou a entrar sem sair do veículo, e ganhou ainda acesso remoto para familiares — problema resolvido e rotina muito mais prática.",
+      "O Carlos ligou porque o portão basculante da garagem ainda era manual: abrir e fechar na correria, à noite e na chuva, tinha virado um incômodo. A estrutura estava sólida, mas faltava automatização, elétrica preparada e segurança. Instalamos motor, central, acionamento, fiação protegida, sensores e controles remotos; ajustamos força, limites e velocidade até a garagem passar a abrir e fechar sozinha, com uso confortável direto do carro.",
     serviceImage: "/images/service-3.webp",
     clientName: "Carlos Ferreira",
-    clientImage: faker.image.personPortrait(),
-    price: faker.number.int({ min: 150, max: 900 }),
-    href: "/servicos/instalacao-controle-remoto-carlos-ferreira",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    clientImage: pexelsPortrait(3785079),
+    price: 5600,
+    href: "/servicos/automatizacao-basculante-carlos-ferreira",
+    videoUrl: "/videos/servico-3.mp4",
     videoThumbnail: "/images/service-3.webp",
     useCase: {
-      title: "Instalação de controle remoto - caso Carlos Ferreira",
+      title: "Automatização de portão basculante - caso Carlos Ferreira",
       contact: {
         paragraphs: [
-          "O Carlos nos procurou após perder os controles antigos e perceber a dificuldade de sempre ter que abrir o portão manualmente. Ele nos contatou pelo telefone e descreveu que precisava de uma solução simples, confiável e com possibilidade de múltiplos usuários (família e empregada doméstica). Agendamos visita técnica para avaliação e apresentamos opções claras de controles e receptor compatíveis.",
+          "O Carlos entrou em contato conosco por telefone após perceber que o portão basculante de sua garagem já não oferecia a praticidade necessária no dia a dia. Ele comentou que o sistema ainda era manual e que, com a rotina corrida da família, abrir e fechar o portão constantemente se tornava incômodo, especialmente em horários noturnos e em dias de chuva. Buscando mais conforto e segurança, solicitou uma avaliação para automatização completa. Agendamos uma visita técnica para entender as condições do portão e indicar a melhor solução.",
         ],
       },
       problem: {
         paragraphs: [
-          "Na inspeção percebemos que o receptor do portão estava funcionando, mas os controles disponíveis eram antigos e muitos haviam sido perdidos ou estavam danificados. Além disso, o receptor tinha apenas dois slots registrados, o que impedia a inclusão de novos controles sem reprogramação completa. O cliente precisava de uma solução que não exigisse substituição total do receptor, mas que ampliasse a conveniência e a segurança.",
+          "Durante a vistoria, identificamos que o portão basculante estava estruturalmente em bom estado, com ferragens firmes e boa estabilidade. No entanto, não havia nenhum sistema de automatização instalado, e o peso do portão exigia esforço considerável para abertura manual. Também observamos ausência de dispositivos de segurança, como travas automáticas e sensores, além de não haver infraestrutura elétrica preparada para receber um automatizador. O desafio era implementar um sistema completo que fosse seguro, eficiente e compatível com o uso frequente.",
         ],
       },
       service: {
         paragraphs: [
-          "Propusemos duas alternativas: instalar um receptor universal compatível (mantendo a fiação existente) ou programar um receptor novo com mais slots e funções de segurança. O Carlos optou pela instalação de um receptor novo com capacidade para múltiplos controles e função de bloqueio temporário. Fornecemos orçamento transparente e prazo curto — o cliente aprovou no mesmo dia.",
-          "Na execução substituímos o módulo receptor, mantendo a alimentação e o aterramento existentes, e posicionamos o equipamento em caixa protegida contra intempéries. Programamos cinco controles (incluindo um reserva), configuramos códigos únicos para cada usuário e testamos alcance e operação a partir do interior do veículo. Também instalamos um botão de fechamento manual próximo ao portão e deixamos instruções de segurança e troca de pilhas para o Carlos e sua família.",
+          "Apresentamos ao Carlos uma proposta de automatização completa para portão basculante, incluindo motor adequado ao peso e dimensões da estrutura, central de comando, trilho de acionamento, braço mecânico, controles remotos e itens de segurança. Após aprovação, iniciamos o processo com a preparação da estrutura para receber o automatizador, incluindo reforços nos pontos de fixação e instalação da base do motor.",
+          "Na sequência, realizamos a instalação do conjunto de acionamento, alinhamento do sistema de elevação e passagem de toda a fiação elétrica com proteção adequada. Instalamos a central de comando em caixa protegida, configuramos os limites de abertura e fechamento e ajustamos a força e velocidade do motor para garantir um movimento equilibrado e silencioso. Também incluímos sensores de segurança e realizamos testes completos de funcionamento, simulando diferentes cenários de uso para validar a confiabilidade do sistema.",
         ],
       },
       conclusion: {
         paragraphs: [
-          "Ao final, entregamos um sistema com operação estável e acesso multiusuário: o Carlos e demais moradores passaram a entrar e sair sem sair do carro, com controles de reserva e possibilidade de bloqueio em caso de perda. Fornecemos um relatório com as configurações, garantias e recomendações de uso. O cliente relatou grande alívio pela praticidade recuperada e elogiou a rapidez da nossa resposta. Note técnico e garantia foram entregues — caso encerrado com sucesso.",
+          "Ao final da instalação, o portão passou a operar de forma totalmente automatizada, com abertura suave e segura, eliminando o esforço manual e trazendo mais praticidade para o dia a dia do cliente. Orientamos o Carlos sobre o uso correto dos controles, procedimentos em caso de falta de energia e cuidados básicos de manutenção preventiva. Também entregamos garantia do equipamento e do serviço realizado. O cliente destacou a melhoria imediata na rotina e a comodidade de acessar a garagem sem sair do carro. Para nossa equipe, foi mais um projeto concluído com eficiência, unindo conforto, segurança e tecnologia.",
         ],
       },
     },
   },
   {
     id: 4,
-    title: "Manutenção preventiva",
+    title: "Automatização de portão deslizante empresarial",
     description:
-      "Uma família ligou preocupada porque o portão vibrava e travava às vezes; eles temiam que uma pane ocorresse em um dia de festa. Agendamos visita, fizemos revisão completa: lubrificação das trilhas, troca de rolamentos, aperto das dobradiças e calibração dos sensores. Entregamos um laudo e orientações simples de uso. Desde então o portão funciona sem surpresas e os proprietários dormem tranquilos.",
+      "A Aline, responsável pela empresa, ligou: o portão deslizante do estacionamento falhava com frequência e atrasava carros, funcionários e visitantes em horário comercial. Fizemos visita rápida, limpamos e realinhamos trilhos, trocamos rolamentos e revisamos motor, central e sensores, com lubrificação para uso intenso. Entregamos laudo e orientações; o acesso voltou a fluir com estabilidade para o dia a dia corporativo.",
     serviceImage: "/images/service-4.webp",
     clientName: "Aline Ribeiro",
-    clientImage: faker.image.personPortrait(),
-    price: faker.number.int({ min: 200, max: 1200 }),
-    href: "/servicos/manutencao-preventiva-aline-ribeiro",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    clientImage: pexelsPortrait(415829),
+    price: 4200,
+    href: "/servicos/portao-deslizante-empresarial-aline-ribeiro",
+    videoUrl: "/videos/servico-4.mp4",
     videoThumbnail: "/images/service-4.webp",
     useCase: {
-      title: "Manutenção preventiva - caso Aline Ribeiro",
+      title: "Automatização de portão deslizante empresarial — caso Aline Ribeiro",
       contact: {
         paragraphs: [
-          "A Aline entrou em contato pelo telefone preocupada: o portão da casa dela apresentava vibrações e, por vezes, travava na metade do percurso. Como ela receberia familiares para uma comemoração no fim de semana, solicitou uma revisão completa com prioridade. Agendamos uma visita técnica em janela compatível com a rotina dela para garantir que o serviço fosse feito antes do evento.",
+          "A responsável pela empresa, Aline, entrou em contato conosco por telefone relatando que o portão deslizante de acesso ao estacionamento vinha apresentando falhas recorrentes ao longo da rotina de trabalho. Como o local possui circulação intensa de funcionários, fornecedores e visitantes, qualquer travamento no portão causava atrasos na entrada de veículos e impactava diretamente a operação da empresa. Além disso, por se tratar de um acesso utilizado diariamente em horário comercial, a segurança e a agilidade eram prioridades. Agendamos uma visita técnica com rapidez, buscando avaliar a estrutura e apresentar uma solução adequada à demanda do ambiente corporativo.",
         ],
       },
       problem: {
         paragraphs: [
-          "Na inspeção inicial constatamos acúmulo de sujeira e ferrugem nos trilhos, rolamentos com folga e dobradiças levemente frouxas. As guias apresentavam desgaste localizado e havia sinais de lubrificação antiga e contaminada. Também detectamos pequenos desajustes no conjunto de batente que causavam impacto em pontos específicos do curso, explicando a vibração e os travamentos intermitentes.",
+          "Na inspeção inicial, identificamos que o portão deslizante sofria com desgaste acentuado nos trilhos, acúmulo de sujeira e pequenos desalinhamentos no percurso, o que explicava as vibrações e os travamentos intermitentes relatados pela cliente. Também observamos folga em componentes de apoio, rolamentos comprometidos e sinais de lubrificação inadequada, já bastante antiga. Como o portão era utilizado com frequência elevada, esses fatores estavam acelerando o desgaste do conjunto e comprometendo a fluidez da abertura e do fechamento. Além disso, o sistema de automatização existente exigia revisão para suportar melhor a rotina intensa da empresa e reduzir riscos de falha operacional.",
         ],
       },
       service: {
         paragraphs: [
-          "Apresentamos à Aline um plano de manutenção preventiva: limpeza e desobstrução dos trilhos, substituição dos rolamentos com folga, aperto e reaperto das dobradiças e batentes, aplicação de lubrificantes específicos e realinhamento do conjunto. Incluímos no serviço a verificação elétrica rápida (conexões do motor e painel) e a calibração dos sensores de fim de curso para evitar repetições do problema.",
-          "Na execução realizamos a limpeza profunda e a retirada de partículas que impediam o curso suave, trocamos os rolamentos comprometidos, reapertamos fixações e ajustamos os batentes. Aplicamos lubrificante apropriado nas partes móveis e testamos o portão em múltiplos ciclos sob diferentes cargas (com e sem veículo na entrada). Também geramos um laudo simples com os pontos verificados, peças trocadas e recomendações de manutenção periódica.",
+          "Com o diagnóstico em mãos, apresentamos à Aline um plano de intervenção voltado tanto para a correção dos defeitos quanto para a melhora do desempenho geral do portão. O serviço incluiu limpeza completa dos trilhos, substituição dos rolamentos danificados, reaperto das fixações, realinhamento do conjunto e aplicação de lubrificantes específicos para uso contínuo. Também realizamos a revisão do automatizador, verificando o motor, a central de comando e os sensores de segurança, além da calibração dos ajustes de curso para garantir abertura e fechamento precisos.",
+          "Na execução, nossa equipe fez a desobstrução total da área de deslocamento do portão, retirando resíduos e pontos de corrosão que prejudicavam o movimento. Em seguida, substituímos os componentes com desgaste, ajustamos o sistema de guia e testamos o funcionamento do motor em diferentes ciclos de uso. Como o portão atende a uma empresa, reforçamos ainda a importância de manter o conjunto preparado para alto volume de acionamentos, priorizando durabilidade, segurança e redução de paradas inesperadas. Ao final, deixamos um laudo técnico com os pontos verificados, as intervenções realizadas e orientações de manutenção preventiva.",
         ],
       },
       conclusion: {
         paragraphs: [
-          "Entregamos o portão funcionando com movimento linear e sem vibrações; os travamentos desapareceram e a operação ficou mais silenciosa. Orientamos a Aline sobre os cuidados básicos (frequência de lubrificação, o que observar em uma revisão rápida) e deixamos um cronograma sugerido para revisões futuras. Ela pôde receber a família sem preocupações e nos relatou satisfação com a rapidez e a limpeza do serviço. Para nós, foi um trabalho de prevenção efetivo, que evitou um possível reparo emergencial.",
+          "Com o serviço concluído, o portão passou a operar de forma mais estável, silenciosa e sem interrupções no percurso. A empresa recuperou a agilidade no acesso de veículos, evitando atrasos na rotina e reduzindo o risco de travamentos durante o expediente. Orientamos a Aline sobre os cuidados básicos de manutenção e sugerimos um cronograma de revisões periódicas, considerando o alto fluxo de uso do local. A cliente destacou a melhora imediata no funcionamento e a praticidade de contar com uma solução confiável para o dia a dia da empresa. Para nossa equipe, foi mais um trabalho executado com foco em desempenho, segurança e continuidade operacional.",
         ],
       },
     },
@@ -157,10 +160,10 @@ export const clientServices = [
       "O cliente precisava abrir manualmente um portão pesado toda vez que chegava com compras ou crianças no carro. Fizemos a conversão para automatização, instalamos motor adequado e sensores de segurança para evitar fechamento sobre obstáculos. Treinamos o cliente no uso e deixamos o sistema com ajuste fino — agora ele entra e sai com praticidade e tranquilidade, especialmente nos dias corridos.",
     serviceImage: "/images/service-5.webp",
     clientName: "Rafael Gomes",
-    clientImage: faker.image.personPortrait(),
-    price: faker.number.int({ min: 900, max: 7000 }),
+    clientImage: pexelsPortrait(1222271),
+    price: 6300,
     href: "/servicos/automatizacao-basculante-rafael-gomes",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    videoUrl: "/videos/servico-5.mp4",
     videoThumbnail: "/images/service-5.webp",
     useCase: {
       title: "Automatização de portão basculante - caso Rafael Gomes",
@@ -189,111 +192,114 @@ export const clientServices = [
   },
   {
     id: 6,
-    title: "Substituição de painel de comando",
+    title: "Automatização de portão basculante",
     description:
-      "Após uma queda de energia e um pico, o painel do portão parou de responder e o portão ficou inoperante por dias. Diagnosticamos dano no módulo de comando e substituímos por um painel com proteção contra surtos, além de configurar rotinas e backups. Reestabelecemos todas as funções (controles, sensores e travas) e deixamos o cliente com um sistema mais seguro e resiliente contra novas falhas.",
+      "A Patrícia enviou o formulário do site: o portão basculante falhava de forma intermitente, pior após quedas de energia, e a família dependia dele todos os dias. Na visita vimos painel e parte elétrica comprometidos e o acionamento mecânico fora de alinhamento. Substituímos o painel por um modelo com proteção contra surtos, refizemos fiação e aterramento, alinhamos trilho e calibramos o motor; testamos ciclos e variações de rede até o sistema ficar estável.",
     serviceImage: "/images/service-6.webp",
     clientName: "Patrícia Lima",
-    clientImage: faker.image.personPortrait(),
-    price: faker.number.int({ min: 250, max: 2500 }),
-    href: "/servicos/substituicao-painel-patricia-lima",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    clientImage: pexelsPortrait(1130626),
+    price: 2250,
+    href: "/servicos/basculante-painel-comando-patricia-lima",
+    videoUrl: "/videos/servico-6.mp4",
     videoThumbnail: "/images/service-6.webp",
     useCase: {
-      title: "Substituição de painel de comando - caso Patrícia Lima",
+      title: "Automatização de portão basculante — caso Patrícia",
       contact: {
         paragraphs: [
-          "A Patrícia nos acionou após uma instabilidade elétrica que deixou o portão sem resposta: às vezes funcionava, às vezes não, e em um pico recente o painel desligou completamente. Ela nos escreveu pelo formulário e solicitou atendimento com urgência, pois dependia do portão para a rotina diária da família.",
+          "A Patrícia entrou em contato conosco pelo formulário do site após notar falhas recorrentes no funcionamento do portão basculante da sua residência. Ela relatou que o sistema respondia de forma inconsistente: em alguns momentos funcionava normalmente, mas em outros simplesmente não acionava, principalmente após quedas de energia recentes na região. Como dependia do portão para a entrada e saída diária da família, solicitou uma avaliação rápida para evitar maiores transtornos. Organizamos uma visita técnica em curto prazo para analisar a situação.",
         ],
       },
       problem: {
         paragraphs: [
-          "Na visita técnica verificamos que o painel apresentava sinais de sobreaquecimento e componentes visivelmente danificados por surtos elétricos. Havia conexões oxidadas e ausência de proteção contra transientes. O comportamento intermitente indicava falha no circuito de comando, tornando o sistema pouco confiável e sujeito a novas queimas em futuras oscilações de rede.",
+          "Durante a vistoria, identificamos que o sistema de automatização apresentava falhas relacionadas à parte elétrica e ao painel de comando. Havia sinais de desgaste em componentes internos, conexões comprometidas e ausência de proteção adequada contra oscilações de energia. Também observamos que o conjunto do motor e trilho de acionamento não estava devidamente ajustado, o que poderia agravar o problema ao longo do tempo. Essa combinação de fatores tornava o funcionamento instável e aumentava o risco de falhas completas no sistema.",
         ],
       },
       service: {
         paragraphs: [
-          "Apresentamos à Patrícia um plano objetivo: substituição do painel por um módulo moderno com proteção contra surtos e supressão de transientes, troca de bornes corroídos e reorganização da fiação em caixa selada. Fornecemos orçamento detalhado e cronograma curto. Com aprovação imediata, programamos a intervenção em uma manhã conveniente para a cliente.",
-          "No dia da execução removemos o painel danificado, inspecionamos a fiação existente, substituímos conectores comprometidos e instalamos o novo painel em caixa metálica com tratamentos de proteção. Configuramos parâmetros de segurança (sensibilidade de sensores, tempo de desaceleração e redundâncias), testamos as proteções contra surtos e validamos todas as entradas/saídas. Realizamos ciclos de teste repetidos e medimos tensões para garantir estabilidade.",
+          "Com base no diagnóstico, propusemos à Patrícia a substituição do painel de comando por um modelo mais moderno, com proteção contra surtos elétricos, além da revisão completa da fiação e ajustes no conjunto mecânico do portão basculante. Após aprovação, iniciamos o serviço com a remoção dos componentes danificados e a organização da instalação elétrica.",
+          "Na sequência, instalamos o novo painel em caixa protegida, substituímos conectores comprometidos, reforçamos o aterramento e reorganizamos toda a fiação para maior segurança e durabilidade. Também realizamos ajustes no sistema de acionamento, alinhando o trilho e calibrando o motor para um funcionamento mais estável. Finalizamos com a programação da central, configuração dos parâmetros de segurança e testes completos, incluindo simulações de variações de energia e ciclos repetidos de abertura e fechamento.",
         ],
       },
       conclusion: {
         paragraphs: [
-          "Entregamos o sistema funcionando de maneira confiável e protegida contra novos picos. Explicamos à Patrícia as medidas adotadas, entregamos a nota técnica com especificação do novo painel e orientações sobre como proceder em casos de queda de energia. Oferecemos um plano opcional de manutenção preventiva para checagem semestral. A cliente relatou alívio e comentou que agora se sente mais segura quanto à proteção elétrica da residência.",
+          "Após a intervenção, o portão passou a operar de forma estável e confiável, mesmo diante de pequenas oscilações na rede elétrica. Explicamos à Patrícia todas as melhorias implementadas, orientamos sobre o uso correto do sistema e fornecemos recomendações para manutenção preventiva. Também entregamos a documentação técnica do novo painel instalado e garantia do serviço. A cliente destacou a tranquilidade de contar com um sistema mais seguro e resistente a falhas elétricas, principalmente após os problemas enfrentados anteriormente. Para nossa equipe, foi mais um projeto concluído com foco em segurança, confiabilidade e durabilidade do sistema.",
         ],
       },
     },
   },
   {
     id: 7,
-    title: "Instalação de sensores e fotocélulas",
+    title: "Automatização de portão basculante alto",
     description:
-      "Uma residência tinha risco constante de o portão fechar sobre bicicletas e pets porque não havia detecção adequada. Instalamos fotocélulas e sensores laterais, fizemos a calibração e testes de segurança em diversas situações. O cliente ganhou proteção extra e confiança: as crianças agora brincam perto da entrada sem medo e o portão para automaticamente ao detectar obstáculos.",
+      "O Bruno, responsável pelo galpão, ligou preocupado com o acesso principal: portão basculante alto, veículos grandes e pouca segurança na automatização. Na visita vimos cobertura insuficiente de sensores e pontos cegos para o fluxo de caminhões, empilhadeiras e pessoas. Instalamos fotocélulas em várias alturas, sensores laterais e integração reforçada à central; cabeamento protegido, calibração e testes reais até o portão parar com confiabilidade em toda a área de risco.",
     serviceImage: "/images/service-7.webp",
     clientName: "Bruno Alves",
-    clientImage: faker.image.personPortrait(),
-    price: faker.number.int({ min: 180, max: 1800 }),
-    href: "/servicos/instalacao-sensores-bruno-alves",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    clientImage: pexelsPortrait(1043471),
+    price: 3750,
+    href: "/servicos/basculante-alto-seguranca-bruno-alves",
+    videoUrl: "/videos/servico-7.mp4",
     videoThumbnail: "/images/service-7.webp",
     useCase: {
-      title: "Instalação de sensores e fotocélulas - caso Bruno Alves",
+      title: "Automatização de portão basculante alto — caso Bruno Alves",
       contact: {
         paragraphs: [
-          "O Bruno nos procurou preocupado: seus filhos e o pet costumavam brincar próximos à garagem e ele temia que o portão pudesse fechar sobre alguém. Ele entrou em contato por telefone e pediu uma solução que trouxesse segurança imediata sem comprometer a praticidade do dia a dia.",
+          "O responsável pela empresa, Bruno, entrou em contato conosco por telefone demonstrando preocupação com a segurança no acesso principal do galpão. Ele relatou que o portão basculante, além de ser alto e utilizado por veículos de grande porte, não contava com um sistema de segurança eficiente, o que gerava receio de acidentes durante a operação — principalmente em horários de maior movimentação. Como o fluxo incluía funcionários, empilhadeiras e entregas frequentes, ele buscava uma solução que aumentasse a segurança sem comprometer a agilidade da operação. Organizamos uma visita técnica para avaliação detalhada do cenário.",
         ],
       },
       problem: {
         paragraphs: [
-          "Na vistoria detectamos que o sistema existente não possuía detecção adequada em toda a largura de passagem — apenas um sensor lateral de baixa sensibilidade e sem redundância. Também havia pontos cegos devido a postes e calhas, o que criava situações em que objetos menores não eram detectados, mantendo o risco de acidentes.",
+          "Na vistoria, identificamos que o portão basculante possuía grande altura e amplitude de abertura, mas o sistema de automatização existente era limitado em termos de segurança. Havia poucos sensores instalados, com cobertura insuficiente para toda a área de passagem, além de pontos cegos causados pela estrutura lateral e pelo próprio tamanho do portão. Também observamos que a configuração atual não estava adequada para o fluxo intenso de veículos e equipamentos, o que aumentava o risco de colisões ou fechamento indevido durante a operação. A ausência de redundância nos sensores era um fator crítico para o ambiente empresarial.",
         ],
       },
       service: {
         paragraphs: [
-          "Propusemos a instalação de um conjunto de fotocélulas frontais, sensores laterais e um feixe adicional na altura baixa para detecção de bicicletas e animais. Apresentamos layout de posicionamento, explicando como cada sensor reduziria riscos em pontos específicos. O Bruno aprovou e agendamos a instalação.",
-          "Na execução posicionamos fotocélulas com proteção contra intempéries, passamos cabeamento protegido e sincronizamos os sensores ao painel de comando, ajustando tempos de resposta e zonas de sensibilidade. Realizamos calibração fina e uma bateria de testes com crianças, bicicletas e objetos diversos para garantir que o portão parasse sempre ao detectar obstáculos, sem falsos positivos que comprometessem a operação.",
+          "Com base na análise, apresentamos ao Bruno um plano completo de modernização do sistema de segurança do portão basculante. Propusemos a instalação de múltiplos pontos de detecção, incluindo fotocélulas em diferentes alturas, sensores laterais e reforço na integração com a central de comando, garantindo cobertura total da área de risco — especialmente considerando a altura elevada do portão.",
+          "Após a aprovação, iniciamos a execução com o posicionamento estratégico dos sensores, levando em conta o fluxo de veículos e possíveis obstáculos. Realizamos a passagem de cabeamento protegido, instalação em estruturas reforçadas e integração com o sistema de automatização existente. Em seguida, configuramos os parâmetros de sensibilidade, tempo de resposta e redundância, assegurando que o portão interrompesse imediatamente qualquer movimento ao detectar presença na área de operação.",
+          "Finalizamos com uma bateria completa de testes práticos, simulando situações reais do dia a dia da empresa: passagem de veículos altos, circulação de pedestres, movimentação de equipamentos e diferentes condições de iluminação. Ajustamos o sistema para evitar falhas de detecção e minimizar interrupções desnecessárias, mantendo o equilíbrio entre segurança e eficiência operacional.",
         ],
       },
       conclusion: {
         paragraphs: [
-          "Ao finalizar, o sistema apresentou detecção confiável em todas as situações testadas: o portão interrompeu o fechamento sempre que um objeto foi detectado, e os ajustes reduziram alarmes falsos. Orientamos o Bruno sobre manutenção simples (limpeza das lentes e checagem anual) e deixamos um relatório das instalações. Ele nos relatou grande alívio ao ver as crianças brincando novamente sem risco próximo ao portão. Segurança entregue com eficiência.",
+          "Após a conclusão do serviço, o portão passou a operar com um nível de segurança muito mais elevado, oferecendo detecção confiável em toda a sua área de atuação, mesmo sendo um portão de grande porte. A equipe da empresa ganhou mais confiança no uso diário, reduzindo riscos de acidentes e melhorando o fluxo de entrada e saída. Orientamos o Bruno sobre os cuidados básicos, como limpeza periódica dos sensores e revisões preventivas, além de entregar um relatório técnico com todas as melhorias implementadas. O cliente destacou a tranquilidade de operar o portão com segurança mesmo em horários de alta movimentação. Para nossa equipe, foi mais um projeto concluído com foco em proteção, eficiência e adaptação ao ambiente corporativo.",
         ],
       },
     },
   },
   {
     id: 8,
-    title: "Abertura de emergência e chave manual",
+    title: "Automatização integrada de portões deslizante e basculante",
     description:
-      "Durante uma pane elétrica, o cliente ficou preso fora de casa e precisou de acesso imediato. Instalamos e configuramos um sistema de abertura manual de emergência com chave local e procedimento de uso seguro. Também treinamos o cliente para utilizar o mecanismo sem danificar o motor. Hoje ele tem garantia de acesso mesmo em situações críticas e relata sentir-se mais seguro.",
+      "A Clara, do armazém, nos procurou por indicação após uma queda de energia: o portão deslizante principal e o basculante alto da carga pararam e a logística travou. Avaliamos os dois acessos, instalamos liberação manual acessível em cada um — chave e destravamento no deslizante, desengate reforçado no basculante —, revisamos motores e centrais, padronizamos a operação e colocamos sinalização de emergência. Testamos com simulação de falta de energia e treinamos a equipe para manter o fluxo mesmo em crise.",
     serviceImage: "/images/service-8.webp",
     clientName: "Clara Sousa",
-    clientImage: faker.image.personPortrait(),
-    price: faker.number.int({ min: 120, max: 1200 }),
-    href: "/servicos/abertura-emergencia-clara-sousa",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    clientImage: pexelsPortrait(733872),
+    price: 5950,
+    href: "/servicos/portoes-deslizante-basculante-emergencia-clara-sousa",
+    videoUrl: "/videos/servico-8.mp4",
     videoThumbnail: "/images/service-8.webp",
     useCase: {
-      title: "Abertura de emergência e chave manual - caso Clara Sousa",
+      title:
+        "Automatização integrada de portões deslizante e basculante — caso Clara Sousa",
       contact: {
         paragraphs: [
-          "A Clara nos chamou após ficar trancada fora de casa durante uma queda de energia: ela não conseguia liberar o motor e precisou pedir ajuda a vizinhos. Procurou nossa assistência por indicação e solicitou uma solução que garantisse acesso mesmo em situações críticas.",
+          "A responsável pelo armazém, Clara, entrou em contato conosco por indicação após enfrentar dificuldades operacionais durante uma queda de energia. Ela relatou que tanto o portão deslizante de acesso principal quanto o portão basculante alto da área de carga ficaram inoperantes, impedindo a entrada e saída de veículos e afetando diretamente a logística do local. Diante da situação, buscava uma solução que garantisse funcionamento confiável no dia a dia e alternativas seguras para situações emergenciais. Agendamos uma visita técnica para avaliar ambos os sistemas e propor uma solução integrada.",
         ],
       },
       problem: {
         paragraphs: [
-          "Na verificação constatamos que o mecanismo de liberação manual existente estava emperrado e de difícil acionamento, além de não haver instrução visível para uso em emergência. Isso deixava a família vulnerável em casos de falta de energia ou pane no motor. Era necessário um sistema de liberação confiável e de fácil operação.",
+          "Na vistoria, identificamos que os dois portões — ambos de grande porte — apresentavam limitações importantes. O portão deslizante possuía automatização funcional, porém sem um sistema eficiente de liberação manual em caso de falha elétrica. Já o portão basculante, além de ser bastante alto e utilizado para cargas maiores, tinha um mecanismo de acionamento com difícil acesso e sem qualquer padronização para uso emergencial. Em ambos os casos, não havia instruções visíveis nem treinamento da equipe para operação manual, o que aumentava o risco de paralisação total em situações críticas.",
         ],
       },
       service: {
         paragraphs: [
-          "Propusemos a instalação de um kit de liberação manual com chave externa e mecanismo de acionamento ergonômico, além de um procedimento documentado para uso em emergência. A Clara gostou da ideia e autorizou a intervenção imediata.",
-          "Instalamos a tranca com acionamento por chave, ajustamos o mecanismo de desengate para que pudesse ser acionado sem esforços excessivos e posicionamos etiquetas instruindo o passo a passo. Realizamos simulações de queda de energia e demonstramos a liberação manual para todos os moradores, garantindo que todos soubessem como proceder sem risco de danificar o motor ou a estrutura.",
+          "Com base nesse cenário, apresentamos à Clara uma proposta de modernização focada em autonomia operacional e segurança. O plano incluiu a instalação de sistemas de liberação manual acessível para ambos os portões, com mecanismos adaptados ao porte e à estrutura de cada um, além da revisão completa dos automatizadores existentes para garantir funcionamento estável.",
+          "Após aprovação, iniciamos a execução com a adequação do portão deslizante, instalando um sistema de destravamento externo com chave e fácil acionamento, permitindo liberação rápida em casos de emergência. Em seguida, trabalhamos no portão basculante alto, onde implementamos um mecanismo de desengate reforçado e acessível, considerando sua altura e uso frequente em operações logísticas.",
+          "Também realizamos ajustes nos automatizadores, revisando motores, centrais de comando e pontos de fixação, além de padronizar os dois sistemas para operação mais intuitiva. Instalamos sinalizações visuais com instruções claras de uso emergencial e realizamos testes simulando quedas de energia, garantindo que ambos os portões pudessem ser operados manualmente com segurança e sem esforço excessivo.",
         ],
       },
       conclusion: {
         paragraphs: [
-          "Ao entregar o serviço, a Clara passou a ter acesso garantido mesmo em situações críticas. Ela valorizou especialmente o treinamento prático que demos à família e a documentação com o passo a passo. Oferecemos ainda revisão gratuita de verificação do mecanismo após 30 dias para garantir que tudo permaneça em perfeito funcionamento. Resultado: mais segurança e tranquilidade para a cliente.",
+          "Com a intervenção concluída, a empresa passou a contar com um sistema muito mais confiável e preparado para situações críticas. Tanto o portão deslizante quanto o basculante alto agora possuem mecanismos de liberação prática, permitindo continuidade das operações mesmo em casos de falta de energia. Além disso, realizamos um treinamento com a equipe do armazém, garantindo que todos soubessem como agir corretamente em emergências. A Clara destacou a importância da solução para evitar prejuízos operacionais e melhorar a segurança do local. Para nossa equipe, foi um projeto estratégico, focado em garantir funcionamento contínuo e autonomia para ambientes de alta demanda.",
         ],
       },
     },

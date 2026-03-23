@@ -160,8 +160,8 @@ Imagens: ${imageUrls.length > 0 ? imageUrls.join(", ") : "não anexadas"}
 `.trim();
 
     const resendResponse = await resendClient.emails.send({
-      from: "COIMCAMP <onboarding@resend.dev>",
-      to: ["atendimento@coimcamp.com"],
+      from: "COIMCAMP <atendimento@contato.coimcamp.com>",
+      to: ["atendimento@coimcamp.com", "gustavo.coimbracoimbra@gmail.com"],
       subject: `Orçamento - ${serviceLabel} (${payload.city})`,
       html,
       text,

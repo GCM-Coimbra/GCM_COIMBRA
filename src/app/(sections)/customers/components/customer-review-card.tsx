@@ -1,6 +1,5 @@
 "use client";
 
-import { faker } from "@faker-js/faker";
 import { RiStarFill } from "@remixicon/react";
 import { motion, useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
@@ -9,7 +8,24 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { fadeInUpVariants } from "../../anime";
 
-export function CustomerReviewCard({ description, index }: { description: string, index: number }) {
+const clientNames = [
+  "João da Silva",
+  "Mariana Costa",
+  "Carlos Ferreira",
+  "Aline Ribeiro",
+  "Rafael Gomes",
+  "Patrícia Lima",
+];
+
+export function CustomerReviewCard({
+  description,
+  index,
+  clientImage,
+}: {
+  description: string;
+  index: number;
+  clientImage: string;
+}) {
   const [isMounted, setIsMounted] = useState(false);
   const cardRef = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(cardRef, { once: true, amount: 0.5 });
@@ -19,7 +35,7 @@ export function CustomerReviewCard({ description, index }: { description: string
     setIsMounted(true);
   }, []);
 
-  const name = isMounted ? faker.person.fullName() : "";
+  const name = isMounted ? clientNames[index] : "";
 
   return (
     <motion.div
@@ -42,12 +58,12 @@ export function CustomerReviewCard({ description, index }: { description: string
           </div>
           <CardTitle className="flex items-center gap-2">
             <Avatar>
-              <AvatarImage src={faker.image.personPortrait()} />
+              <AvatarImage src={clientImage} />
             </Avatar>
             <div className="flex flex-col">
               <p className="font-medium text-sm">{name}</p>
               <p className="text-muted-foreground text-sm">
-                @{isMounted ? faker.internet.username() : ""}
+                @{name ? name.toLowerCase().replaceAll(" ", "") : ""}
               </p>
             </div>
           </CardTitle>

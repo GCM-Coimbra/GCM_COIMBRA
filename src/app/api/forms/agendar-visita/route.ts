@@ -194,7 +194,7 @@ Imagens: ${imageUrls.length > 0 ? imageUrls.join(", ") : "não anexadas"}
 
     const resendResponse = await resendClient.emails.send({
       from: "COIMCAMP <atendimento@contato.coimcamp.com>",
-      to: ["halbuquerque2850@gmail.com"],
+      to: ["atendimento@coimcamp.com", "gustavo.coimbracoimbra@gmail.com"],
       subject: `Agendar visita - ${serviceLabel} (${payload.city})`,
       html,
       text,

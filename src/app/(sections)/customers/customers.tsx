@@ -1,7 +1,6 @@
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: <because> */
 "use client";
 
-import { faker } from "@faker-js/faker";
 import { RiStarFill } from "@remixicon/react";
 import { motion, useInView } from "motion/react";
 import Image from "next/image";
@@ -14,6 +13,12 @@ import { cn } from "@/lib/utils";
 import { fadeInUpVariants, fadeInVariants } from "../anime";
 import { CustomerReviewCard } from "./components/customer-review-card";
 import { testimonials } from "./data";
+
+function pexelsPortrait(photoId: number) {
+  return `https://images.pexels.com/photos/${photoId}/pexels-photo-${photoId}.jpeg?auto=compress&cs=tinysrgb&w=480&h=480&fit=crop`;
+}
+
+const photoIds = [2379004, 774909, 3785079, 415829, 1222271, 1130626];
 
 export function Customers() {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -77,7 +82,7 @@ export function Customers() {
                           index !== 0 && "-ms-3",
                         )}
                       >
-                        <AvatarImage src={faker.image.personPortrait()} />
+                        <AvatarImage src={pexelsPortrait(photoIds[index])} />
                       </Avatar>
                     ))}
                   </div>
@@ -111,6 +116,7 @@ export function Customers() {
             key={item.id}
             description={item.description}
             index={index}
+            clientImage={pexelsPortrait(photoIds[index])}
           />
         ))}
       </div>
