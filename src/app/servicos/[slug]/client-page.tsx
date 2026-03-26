@@ -14,7 +14,6 @@ interface useCaseProps {
   serviceImage: string;
   clientName: string;
   clientImage?: string;
-  price: number;
   href: string;
   videoUrl: string;
   videoThumbnail: string;
