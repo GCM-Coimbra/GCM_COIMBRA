@@ -131,14 +131,15 @@ export function ClientPage({
               Resultado:
             </h2>
             <div className="relative aspect-video w-full overflow-hidden rounded-xl">
+              {/* biome-ignore lint/a11y/useMediaCaption: Track sem src quebrava Safari/iOS; legendas exigem arquivo VTT real. */}
               <video
                 src={subject.videoUrl}
                 controls
+                playsInline
+                preload="metadata"
                 className="size-full object-cover object-center"
                 poster={subject.videoThumbnail}
-              >
-                <track kind="captions" srcLang="pt-BR" />
-              </video>
+              />
             </div>
           </div>
         </div>
