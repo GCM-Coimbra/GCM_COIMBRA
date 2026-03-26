@@ -97,17 +97,10 @@ export function ClientPage({
                   Ver resultado <RiArrowDownLine className="ms-2" />
                 </Button>
               </div>
-              <div className="space-y-4">
+              <div>
                 <p className="text-foreground">
                   <span className="font-bold text-foreground">Cliente:</span>{" "}
                   {subject.clientName}
-                </p>
-                <p className="text-foreground">
-                  <span className="font-bold text-foreground">Preço:</span>{" "}
-                  {subject.price.toLocaleString("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  })}
                 </p>
               </div>
             </div>

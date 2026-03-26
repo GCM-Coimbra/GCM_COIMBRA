@@ -1,6 +1,5 @@
 import {
   RiArrowRightFill,
-  RiMoneyDollarCircleLine,
   RiUserLine,
 } from "@remixicon/react";
 import Image from "next/image";
@@ -14,7 +13,6 @@ interface ClientServiceProps {
   serviceImage: string;
   clientName: string;
   clientImage?: string;
-  price: number;
   href: string;
 }
 
@@ -24,7 +22,6 @@ export function ClientServiceCard({
   serviceImage,
   clientName,
   clientImage,
-  price,
   href,
 }: ClientServiceProps) {
   return (
@@ -57,15 +54,6 @@ export function ClientServiceCard({
                 )}
                 <p className="text-foreground">{clientName}</p>
               </div>
-            </div>
-            <div className="flex gap-2 rounded-lg bg-chart-3/20 p-2">
-              <RiMoneyDollarCircleLine />
-              <p className="font-semibold text-foreground">
-                {price.toLocaleString("pt-BR", {
-                  style: "currency",
-                  currency: "BRL",
-                })}
-              </p>
             </div>
           </div>
         </div>
