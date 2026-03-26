@@ -87,7 +87,7 @@ export function NavigationMenu() {
             <div className="flex items-center gap-2">
               <Image
                 src="/images/setting.png"
-                alt="Logo"
+                alt="COIMCAMP"
                 width={isMobile ? 24 : 32}
                 height={isMobile ? 24 : 32}
               />

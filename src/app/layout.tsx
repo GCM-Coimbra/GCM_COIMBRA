@@ -3,12 +3,29 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import { FixedContactButton } from "@/components/fixed-contact-button/fixed-contact-button";
 import { NavigationMenu } from "@/components/navigation-menu/navigation-menu";
+import { getSiteUrl, SITE_NAME } from "@/lib/site";
 import { Footer } from "./(sections)/footer/footer";
 
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
-  title: "COIMCAMP",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default:
+      "COIMCAMP — Automação, monitoramento e serviços elétricos em Campinas e região",
+    template: "%s | COIMCAMP",
+  },
   description:
-    "Serviços de segurança, manutenção e alarmes em Campinas, valinhos, vinhedo e região.",
+    "COIMCAMP oferece automação, monitoramento, segurança e serviços elétricos em Campinas, Valinhos, Vinhedo e região. Equipe especializada e atendimento próximo.",
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: SITE_NAME,
+    url: `${siteUrl}/`,
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({

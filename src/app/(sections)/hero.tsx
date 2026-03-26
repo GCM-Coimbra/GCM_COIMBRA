@@ -56,7 +56,7 @@ export function Hero() {
             custom={0.2}
             className="max-w-7xl font-bold text-3xl uppercase lg:text-5xl xl:text-7xl!"
           >
-            Precisando de automação, Monitoramento e/ou Serviços Elétricos?
+            COIMCAMP — automação, monitoramento e serviços elétricos
           </motion.h1>
           <div className="flex min-h-32 w-full flex-col items-start justify-between gap-8 py-4 lg:flex-row lg:pe-18">
             <motion.div
@@ -67,8 +67,9 @@ export function Hero() {
               className="w-96 max-w-[460px] md:w-fit"
             >
               <p className="text-lg text-muted-foreground md:text-xl">
-                Solucione seus problemas com a nossa equipe de especialistas
-                treinados para atender a sua necessidade.
+                Precisando de automação, monitoramento ou serviços elétricos?
+                Solucione com a equipe COIMCAMP, especialistas treinados para a
+                sua necessidade.
               </p>
             </motion.div>
             <Badge variant="outline" className="border-none">

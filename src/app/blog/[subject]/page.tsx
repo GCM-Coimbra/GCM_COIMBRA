@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { Spinner } from "@/components/ui/spinner";
+import { getSiteUrl } from "@/lib/site";
 import { ClientPage } from "./client-page";
 import { getArticleBySlug, getArticles } from "./use-get-article";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = getSiteUrl();
 
 export async function generateMetadata({
   params,
@@ -16,7 +17,7 @@ export async function generateMetadata({
   const article = await getArticleBySlug(subject);
 
   if (!article) {
-    const title = "Artigo não encontrado | Blog";
+    const title = "Artigo não encontrado | COIMCAMP";
     return {
       title,
       description: "O conteúdo solicitado não foi encontrado.",
@@ -28,7 +29,7 @@ export async function generateMetadata({
   const url = new URL(`/blog/${subject}`, siteUrl).href;
 
   return {
-    title: `${article.title} | Blog GCM`,
+    title: `${article.title} | Blog COIMCAMP`,
     description: article.description,
     alternates: { canonical: `/blog/${subject}` },
     openGraph: {
