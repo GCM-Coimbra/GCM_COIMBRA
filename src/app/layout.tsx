@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { Toaster } from "sonner";
 import { FixedContactButton } from "@/components/fixed-contact-button/fixed-contact-button";
@@ -7,6 +8,7 @@ import { getSiteUrl, SITE_NAME } from "@/lib/site";
 import { Footer } from "./(sections)/footer/footer";
 
 const siteUrl = getSiteUrl();
+const GOOGLE_ADS_TAG_ID = "AW-18042166634";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -36,6 +38,19 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className="antialiased">
+        <Script
+          id="gtag-js"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_TAG_ID}`}
+          strategy="beforeInteractive"
+        />
+        <Script id="gtag-config" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GOOGLE_ADS_TAG_ID}');
+          `}
+        </Script>
         <div className="relative flex min-h-screen w-full flex-col">
           <NavigationMenu />
           {children}
